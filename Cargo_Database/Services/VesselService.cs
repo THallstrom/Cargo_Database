@@ -25,7 +25,16 @@ namespace Cargo_Database.Services
             Console.WriteLine($"Fartyg i databasen: {vesselInMenu.VesselName}");
             Console.WriteLine($"Hamn i databasen: {vesselInMenu.HarbourName}");
             Console.ReadLine();
+        }
 
+        public async Task GetAllVesselAsync()
+        {
+            var vessels = await _repo.GetAllAsync();
+            foreach (var vessel in vessels)
+            {
+                Console.WriteLine(vessel.VesselName);
+            }
+            Console.ReadLine();
         }
     }
 }

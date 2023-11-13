@@ -14,13 +14,14 @@ namespace Cargo_Database
             var host = Host.CreateDefaultBuilder(args)
                 .ConfigureServices(services =>
                 {
-                    services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\skola\Databas\Cargo_Database\Cargo_Database\Contexts\CargoDb.mdf;Integrated Security=True;Connect Timeout=30"));
+                    services.AddDbContext<DataContext>(x => x.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\EgnaProjekt\Databas\Data_base\Cargo_Database\Contexts\Cargo_db.mdf;Integrated Security=True;Connect Timeout=30"));
                     services.AddScoped<MenuService>();
                     services.AddScoped<VesselRepo>();
                     services.AddScoped<CargoRepo>();
                     services.AddScoped<CisternMeasureRepo>();
                     services.AddScoped<CisternRepo>();
                     services.AddScoped<VesselService>();
+                    services.AddScoped<CisternService>();
                 })
                 .Build();
 
